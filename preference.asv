@@ -1,0 +1,7 @@
+%This function calculates the prey preference
+
+function pref=preference()
+for i=1:p.Pgrid
+    pref(i)=exp(-((log(p.xP(i))-log(25(p))/p.deltaxP)^2)
+end
+    
