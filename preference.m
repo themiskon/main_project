@@ -4,7 +4,7 @@
 function pref=preference(p)
 op=optsize(p);
 for i=1:p.Zgrid
-    pref(i,:)=exp(-(log(p.xp)-log(op(i))./p.deltaxP).^2);
+    pref(i,:)=exp(-((log10(p.xp)-log10(op(i)))./p.deltaxP).^2);
 end
 end
 
