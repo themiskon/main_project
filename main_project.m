@@ -5,7 +5,7 @@ t=1:250; %time
 %p=depended(p) %calculate the size depended parameters
 
 %%
-%let see what we have got!
+%let's see what we have got!
 %Plot 1. feeding preference graph
 figure(1)
 h=gca;
@@ -31,4 +31,4 @@ plot(p.xp, p.m0)
 xlabel('Phytoplankton size (μm)')
 ylabel('growth rate (day^{-1})')
 %%
-%[t,y] = ode45(@astrocat, t, y, [],p)
+[t,y] = ode45(@astrocat, t, y, [],p)
