@@ -31,4 +31,7 @@ plot(p.xp, p.m0)
 xlabel('Phytoplankton size (μm)')
 ylabel('growth rate (day^{-1})')
 %%
-[t,y] = ode45(@astrocat, t, y, [],p)
+[t,y] = ode45(@astrocat, t, y, [],p);
+%%
+figure(3)
+surface(t,1:41,y');
