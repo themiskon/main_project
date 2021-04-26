@@ -1,5 +1,5 @@
 [y,p]=projectp;
-t=1:250; %time 
+t=1:500; %time 
 %p.variable=x %sensitivity test
 
 %p=depended(p) %calculate the size depended parameters
@@ -33,5 +33,5 @@ ylabel('growth rate (day^{-1})')
 %%
 [t,y] = ode45(@astrocat, t, y, [],p);
 %%
-figure(3)
-surface(t,1:41,y');
+%figure(3)
+surface(t,1:20,y(:,1:20)');
