@@ -101,7 +101,4 @@ figure(6)
 bar(1:p.Zgrid,p.xz)
 xlabel('zooplankton size class')
 ylabel('ESD (μm)')
-
-
-
 end
