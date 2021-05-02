@@ -87,7 +87,7 @@ plot(t,y(:,end))
 xticks(o'.*365);
 xticklabels({o});
 xlabel('time (years)')
-ylabel('nutrient concentration')
+ylabel('nutrient concentration (μMN)')
 
 %Plot 6. Size classes
 figure(6)

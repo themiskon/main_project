@@ -15,7 +15,7 @@ p.i0=0.5; %maximum ingestion rate (d^-1)
 p.deltaxP=0.25; %log(x) units.
 p.initP=0.5*ones(p.Pgrid,1); %initial concentration of P (μMolN)
 p.initZ=0.1*ones(p.Zgrid,1); %initial concentration of Z (μMolN)
-p.S= 1;  %external nutrient supply (μMNd^-1)
+p.S= 2.5;  %external nutrient supply (μMNd^-1)
 y=[p.initP; p.initZ; p.N0] ;
 %%
 %calculating size-depended initial parameters

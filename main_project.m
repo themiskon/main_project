@@ -9,5 +9,3 @@ disp('running the model')
 %%
 disp('plotting')
 graphs(p,t,y);
-
-
