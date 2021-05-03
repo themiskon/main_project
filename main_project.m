@@ -2,7 +2,7 @@
 t=1:365*30; %time (days)
 %p.variable=x %sensitivity test
 
-%p=depended(p) %calculate the size depended parameters
+%p=depended(p) %calculate size depended parameters
 %%
 disp('running the model')
 [t,y] = ode45(@astrocat, t, y, [],p);

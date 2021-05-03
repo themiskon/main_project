@@ -18,7 +18,9 @@ yticklabels({'1','2','5','10','20'});
 c = colorbar;
 c.Label.String = 'Prey preference';
 shading interp;
-colormap gray;
+c = gray;
+c = flipud(c);
+colormap(c);
 
 %Plot 2. Max growth rate of phytoplankton size classes
 figure(2)
