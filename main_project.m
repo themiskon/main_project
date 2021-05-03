@@ -9,3 +9,18 @@ disp('running the model')
 %%
 disp('plotting')
 graphs(p,t,y);
+
+%%
+%total population 
+xp=y(:,1:p.Pgrid);
+xz=y(:,p.Pgrid+1:p.Pgrid+p.Zgrid);
+sumxp=sum(xp,2);
+sumxz=sum(xz,2);
+figure(10)
+tiledlayout(3,1)
+nexttile
+plot(t,sumxp)
+nexttile
+plot(t,sumxz)
+nexttile
+plot(t,y(:,end))

@@ -27,7 +27,7 @@ figure(2)
 plot(p.xp, p.m0)
 xlabel('Phytoplankton size (μm)')
 ylabel('max growth rate (day^{-1})')
-title('max growth rate for different phytoplankton size classes')
+title('phytoplankton max growth rate')
 
 %Plot 3. Phytoplankton concentration through time
 figure(3)
@@ -103,4 +103,22 @@ figure(6)
 bar(1:p.Zgrid,p.xz)
 xlabel('zooplankton size class')
 ylabel('ESD (μm)')
+
+%plot 7. Zooplankton mortality rate
+figure(7)
+h=gca;
+plot(p.xz,p.zeta)
+set(h,'xscale','log');
+xticks([2 20 200]);
+xticklabels({'2','20','200'});
+xlabel('Zooplankton size (μm)')
+ylabel('Mortality rate ((μMN)^{-1}d^{-1})')
+title('Zooplankton mortality rate')
+
+figure(8)
+xp=y(:,1:p.Pgrid);
+avxp=mean(xp);
+bar(1:p.Pgrid,avxp)
+h=gca;
+set(h,'yscale','log');
 end

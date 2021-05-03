@@ -3,8 +3,11 @@
 %zooplankton size classes for one specific phytoplankton size class.
 function pref=preference(p)
 op=optsize(p);
-for i=1:p.Zgrid
-    pref(:,i)=exp(-((log10(p.xp)-log10(op(i)))./p.deltaxP).^2);
+pref(1:p.Pgrid,1:p.Zgrid)=0;
+for i=1:p.Pgrid
+    for j=1:p.Zgrid
+    pref(i,j)=exp(-((log10(p.xp(i))-log10(op(j)))./p.deltaxP)^2);
+    end
 end
 end
 
