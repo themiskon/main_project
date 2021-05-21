@@ -1,26 +1,31 @@
-[y,p]=projectp;
+%Variables + time definition
+[yi,p]=projectp;
 t=1:365*30; %time (days)
-%p.variable=x %sensitivity test
 
-%p=depended(p) %calculate size depended parameters
 %%
+%sensitivity test
+g=30; %
+%p.z= logspace(log10(0.06), log10(4),g) ; %min and max values of parameter
+p.z=linspace(0.06,4,g);
+%p.z=[0.03 0.05 0.10 0.15 0.20];
+yy=struct;
+disp('running sensitivity test')
+for i=1:g
+p.S= p.z(i);
+if exist('g','var')
+    [t,y] = ode45(@astrocat, t, yi, [],p);
+    yy.(sprintf('case%d',i))=y;
+%p=depended(p) %calculate size depended parameters
+else
+    %%
 disp('running the model')
-[t,y] = ode45(@astrocat, t, y, [],p);
+
+[t,y] = ode45(@astrocat, t, yi, [],p);
+end
+end
 %%
 disp('plotting')
-graphs(p,t,y);
-
+graphs(p,t,yy.case30);
 %%
-%total population 
-xp=y(:,1:p.Pgrid);
-xz=y(:,p.Pgrid+1:p.Pgrid+p.Zgrid);
-sumxp=sum(xp,2);
-sumxz=sum(xz,2);
-figure(10)
-tiledlayout(3,1)
-nexttile
-plot(t,sumxp)
-nexttile
-plot(t,sumxz)
-nexttile
-plot(t,y(:,end))
+%statistics
+statistics(p,t,yy,g)

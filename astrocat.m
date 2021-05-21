@@ -2,12 +2,12 @@ function dydt=astrocat(t,y,p)
 P = y(1:p.Pgrid);
 Z = y(p.Pgrid+1:p.Pgrid+p.Zgrid);
 N = y(end);
-ix=1:p.Pgrid;
-total(ix)=sum(p.pref(:,ix).*P(ix));
+% ix=1:p.Zgrid;
+% total(ix)=sum(p.pref(:,ix).*P(ix));
 graz(1:p.Pgrid,1:p.Zgrid)=0;
 for i=1:p.Pgrid
     for j=1:p.Zgrid
-        graz(i,j)=p.i0(j)*(p.pref(j,i)*P(i))/(p.Ks+total(i))*Z(j);
+        graz(i,j)=p.i0(j)*(p.pref(i,j)*P(i))/(p.Ks+sum(p.pref(:,j).*P(:)))*Z(j);
     end
 end
     
