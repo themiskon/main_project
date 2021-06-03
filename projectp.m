@@ -11,7 +11,6 @@ p.xz = logspace(log10(p.smallZ), log10(p.largeZ),p.Zgrid); %size classes for zoo
 p.eps=1/3; %Zooplankton assimilation efficiency
 p.lP=0.1; %phytoplankton mortality rate
 p.feg=1/3; %portion of egested food (unitless)
-p.i0=0.5; %maximum ingestion rate (d^-1)
 p.deltaxP=0.25; %log(x) units.
 p.initP=0.2*ones(p.Pgrid,1); %initial concentration of P (μMolN)
 p.initZ=0.1*ones(p.Zgrid,1); %initial concentration of Z (μMolN)

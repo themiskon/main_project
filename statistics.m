@@ -37,22 +37,30 @@ set(gca,'fontsize', 18);
 colorbar
 yticks([1 2 5 10 20]);
 yticklabels({'1','2','5','10','20'});
-xlabel('Nutrient input (μMNd^{-1})')
-axis([0.06 4 p.smallP p.largeP])
+xticks([0.03 0.05 0.10 0.15 0.20]);
+xticklabels({'0.03','0.05','0.1','0.15','0.20'});
+xlabel('Phytoplankton mortality factor')
+ylabel('Size (μm)')
+axis([0.03 0.20 p.smallP p.largeP])
+shading flat
 nexttile
 surface(p.z,p.xz,meanZ');
 h=gca;
 set(h,'yscale','log')
-xlabel('Nutrient input (μMNd^{-1})')
-ylabel('Zooplankton size (μm)')
+xlabel('Phytoplankton mortality factor')
+%ylabel('Zooplankton size (μm)')
 c = colorbar;
 c.Label.String = 'mean concentration (mMN)';
+c.FontSize=18;
 h=gca;
 set(h,'yscale','log')
 set(gca,'fontsize', 18);
-axis([0.06 4 p.smallZ p.largeZ])
+axis([0.03 0.20 p.smallZ p.largeZ])
 yticks([2 20 200]);
 yticklabels({'2','20','200'});
+xticks([0.03 0.05 0.10 0.15 0.20]);
+xticklabels({'0.03','0.05','0.1','0.15','0.20'});
+shading flat
 
 %Change in mean total phytoplankton and zooplankton biomass and nutrient
 %concentration
@@ -98,21 +106,24 @@ colorbar
 yticks([1 2 5 10 20]);
 yticklabels({'1','2','5','10','20'});
 xlabel('Nutrient input (μMNd^{-1})')
-ylabel('Phytoplankton size (μm)')
+ylabel('Size (μm)')
 axis([0.06 4 p.smallP p.largeP])
+shading flat
 nexttile
 surface(p.z,p.xz,meanPZ');
 h=gca;
 set(h,'yscale','log')
 xlabel('Nutrient input (μMNd^{-1})')
-ylabel('Zooplankton size (μm)')
+%ylabel('Zooplankton size (μm)')
 c = colorbar;
 c.Label.String = 'percentage (%) of total biomass';
+c.FontSize=18;
 h=gca;
 set(h,'yscale','log')
 set(gca,'fontsize', 18);
 axis([0.06 4 p.smallZ p.largeZ])
 yticks([2 20 200]);
 yticklabels({'2','20','200'});
+shading flat
 end
 

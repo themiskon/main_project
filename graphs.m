@@ -131,7 +131,7 @@ title('Zooplankton mortality rate')
 figure(8)
 clf
 y(y<0)=0;
-boxplot(log10(y(5*365+1:end,1:p.Pgrid)),p.xp)
+boxplot(log10(y(15*365+1:end,1:p.Pgrid)),p.xp)
 % fmt = xtickformat
 % xtickformat('%.2f')
 
